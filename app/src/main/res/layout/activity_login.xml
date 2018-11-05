@@ -5,6 +5,7 @@
     >
 
     <ImageView
+        android:id="@+id/background_img"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
@@ -16,35 +17,42 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
-        android:padding="18dp">
+        android:padding="20dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login"
+            android:text="@string/welcome"
             android:textSize="52sp"/>
 
         <EditText
-            android:id="@+id/username_et"
+            style="@style/GreyEditText"
+            android:id="@+id/user_et"
             android:layout_marginTop="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="username"/>
+            android:hint="@string/user"
+            />
 
         <EditText
+            style="@style/GreyEditText"
             android:id="@+id/password_et"
             android:layout_marginTop="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="password"/>
+            android:hint="@string/password"
+            />
 
         <Button
             android:id="@+id/login_btn"
+            android:text="@string/login_title"
+            android:backgroundTint="@color/colorPrimaryDark"
             android:layout_marginTop="16dp"
             android:layout_width="150dp"
             android:layout_height="60dp"
-            android:backgroundTint="@color/colorPrimary"
             android:textAllCaps="false"
-            android:text="Ingresar"/>
+
+            />
     </LinearLayout>
 </FrameLayout>
+

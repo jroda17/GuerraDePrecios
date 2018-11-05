@@ -44,9 +44,9 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        Button btnList = (Button) findViewById(R.id.list_btn);
-        ListOnClickListener listOnClickListener = new ListOnClickListener();
-        btnList.setOnClickListener(listOnClickListener);
+        //Button btnList = (Button) findViewById(R.id.list_btn);
+        //ListOnClickListener listOnClickListener = new ListOnClickListener();
+        //btnList.setOnClickListener(listOnClickListener);
 
     }
 
