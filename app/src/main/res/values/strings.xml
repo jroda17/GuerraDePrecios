@@ -1,4 +1,8 @@
 <resources>
-    <string name="app_name">Guerra de Precios</string>
-    <string name="login_name">Login</string>
+    <string name="app_name">Prices War</string>
+    <string name="welcome">Welcome</string>
+    <string name="user">User</string>
+    <string name="password">Password</string>
+    <string name="login_title">Login</string>
+    <string name="list_title">List</string>
 </resources>
