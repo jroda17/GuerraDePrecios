@@ -43,6 +43,7 @@ public class ListActivity extends AppCompatActivity {
                     fab_better.setVisibility(View.INVISIBLE);
                     fab_worse.setVisibility(View.INVISIBLE);
                     isOpen=false;
+                    fabfilter.setImageResource(R.drawable.filter);
                 }
                 else
                 {
@@ -54,7 +55,7 @@ public class ListActivity extends AppCompatActivity {
                     fab_better.setVisibility(View.VISIBLE);
                     fab_worse.setVisibility(View.VISIBLE);
                     isOpen=true;
-
+                    fabfilter.setImageResource(R.drawable.plus);
                 }
             }
         });
