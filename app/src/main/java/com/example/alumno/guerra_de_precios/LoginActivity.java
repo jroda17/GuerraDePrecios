@@ -1,9 +1,8 @@
 package com.example.alumno.guerra_de_precios;
 
-import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
                     message = "Credenciales Correctas";
                     Toast.makeText(LoginActivity.this,message,Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(LoginActivity.this, ListActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     LoginActivity.this.startActivity(intent);
 
                 }else{
@@ -44,21 +43,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        //Button btnList = (Button) findViewById(R.id.list_btn);
-        //ListOnClickListener listOnClickListener = new ListOnClickListener();
-        //btnList.setOnClickListener(listOnClickListener);
-
     }
 
-    private class ListOnClickListener implements View.OnClickListener {
-
-        @Override
-        public void onClick(View v) {
-            String message = "Yendo a Lista";
-            Toast.makeText(LoginActivity.this,message,Toast.LENGTH_SHORT).show();
-
-            Intent intent = new Intent(LoginActivity.this, ListActivity.class);
-            LoginActivity.this.startActivity(intent);
-        }
-    }
 }

@@ -30,9 +30,11 @@
         android:id="@+id/fab_worse"
         app:pressedTranslationZ="12dp"
         app:backgroundTint="@color/red600"
-        android:visibility="invisible">
-    </android.support.design.widget.FloatingActionButton>
+        android:visibility="invisible"
+        />
+
     <android.support.design.widget.FloatingActionButton
+
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_gravity="bottom|end"
@@ -43,4 +45,5 @@
         android:id="@+id/fab_filter"
         app:pressedTranslationZ="12dp"
         />
-    </FrameLayout>
+
+</FrameLayout>

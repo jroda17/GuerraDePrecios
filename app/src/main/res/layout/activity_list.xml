@@ -13,6 +13,6 @@
         android:layout_height="match_parent"
         android:text="@string/list_title"
         />
-    <include layout="@layout/layout_button"/>
+
 
 </android.support.design.widget.CoordinatorLayout>

@@ -5,4 +5,5 @@
     <string name="password">Contraseña</string>
     <string name="login_title">Entrar</string>
     <string name="list_title">Lista</string>
+    <string name="action_close_session">Close Session</string>
 </resources>
