@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -21,30 +22,78 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         initNavigation();
 
-//        findViewById(R.id.btn_holis).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this, PlaceActivity.class);
-//                MainActivity.this.startActivity(intent);
-//            }
-//        });
     }
 
     private void initNavigation() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
+        FloatingActionButton fabPrincipal = (FloatingActionButton) findViewById(R.id.fab_filter);
+
+
+
+
+        fabPrincipal.setOnClickListener(new View.OnClickListener() {
+
+
+
+            @Override
+            public void onClick(View view) {
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
-//            }
-//        });
+
+                //animacion del fab que despliega
+                Animation animRotate = android.view.animation.AnimationUtils.loadAnimation(view.getContext(),  R.anim.rotate_clockwise);
+                animRotate.setDuration(100L);
+                view.startAnimation(animRotate);
+
+                //obtengo los botones
+                final FloatingActionButton fab1 = (FloatingActionButton) findViewById(R.id.fab_worse);
+                final FloatingActionButton fab2 = (FloatingActionButton) findViewById(R.id.fab_best);
+
+                //muestro los botones
+                if (fab1.getVisibility() == View.VISIBLE){
+
+                    //animacion de apertura
+                    Animation animClose = android.view.animation.AnimationUtils.loadAnimation(fab1.getContext(),  R.anim.fab_close);
+                    animClose.setDuration(250L);
+                    fab1.startAnimation(animClose);
+                    fab2.startAnimation(animClose);
+
+                    fab1.setVisibility(View.INVISIBLE);
+                    fab2.setVisibility(View.INVISIBLE);
+                }else{
+
+                    //animacion de apertura
+                    Animation animOpen = android.view.animation.AnimationUtils.loadAnimation(fab1.getContext(),  R.anim.fab_open);
+                    animOpen.setDuration(300L);
+                    fab1.startAnimation(animOpen);
+                    fab2.startAnimation(animOpen);
+
+                    fab1.setVisibility(View.VISIBLE);
+                    fab2.setVisibility(View.VISIBLE);
+                }
+
+                //onlick para que se oculten los botones
+                View noButtonZone = findViewById(R.id.no_button_zone);
+                noButtonZone.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        Animation animClose = android.view.animation.AnimationUtils.loadAnimation(fab1.getContext(),  R.anim.fab_close);
+                        animClose.setDuration(250L);
+                        fab1.startAnimation(animClose);
+                        fab2.startAnimation(animClose);
+
+                        fab1.setVisibility(View.INVISIBLE);
+                        fab2.setVisibility(View.INVISIBLE);
+                    }
+                });
+
+            }
+        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(

@@ -5,5 +5,8 @@
     <string name="password">Contraseña</string>
     <string name="login_title">Entrar</string>
     <string name="list_title">Lista</string>
-    <string name="action_close_session">Close Session</string>
+    <string name="action_close_session">Cerrar Sesion</string>
+    <string name="action_settings">Opciones</string>
+    <string name="navigation_drawer_close">Cerrar Menu de Navegacion</string>
+    <string name="navigation_drawer_open">Abrir Menu de Navegacion</string>
 </resources>
