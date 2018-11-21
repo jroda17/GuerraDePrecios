@@ -1,10 +1,11 @@
 package com.example.alumno.guerra_de_precios;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -32,12 +33,7 @@ public class MainActivity extends AppCompatActivity
 
         FloatingActionButton fabPrincipal = (FloatingActionButton) findViewById(R.id.fab_filter);
 
-
-
-
         fabPrincipal.setOnClickListener(new View.OnClickListener() {
-
-
 
             @Override
             public void onClick(View view) {
@@ -56,7 +52,7 @@ public class MainActivity extends AppCompatActivity
                 //muestro los botones
                 if (fab1.getVisibility() == View.VISIBLE){
 
-                    //animacion de apertura
+                    //animacion de cierre
                     Animation animClose = android.view.animation.AnimationUtils.loadAnimation(fab1.getContext(),  R.anim.fab_close);
                     animClose.setDuration(250L);
                     fab1.startAnimation(animClose);
@@ -131,6 +127,13 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+
+            //hacer algo aca?
+            return true;
+        } else if (id == R.id.action_close_session) {
+
+            //esto listo
+            cerrarSesion();
             return true;
         }
 
@@ -143,22 +146,26 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_places) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_new_place) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_map) {
 
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_help) {
 
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void cerrarSesion() {
+        SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE);
+        sharedPreferences.edit().clear().commit();
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        MainActivity.this.startActivity(intent);
+        MainActivity.this.finish();
     }
 }
