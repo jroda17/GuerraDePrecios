@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="200dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/rest"
+            android:scaleType="centerCrop"
+            android:id="@+id/rest"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|left"
+            android:id="@+id/name_rest"
+            android:text="Restaurante Pepitoide"
+            android:layout_marginBottom="25dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:background="@color/negrito"
+            />
+        <RatingBar
+            style="?android:attr/ratingBarStyleSmall"
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="0.5"
+            android:layout_gravity="left|bottom"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:isIndicator="true"
+            android:rating="2.5"
+            android:theme="@style/RatingBar"
+            android:background="@color/negrito"
+            />
+
+
+</FrameLayout>

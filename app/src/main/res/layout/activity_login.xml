@@ -63,7 +63,6 @@
 
         </LinearLayout>
 
-
         <Button
             android:id="@+id/login_btn"
             android:text="@string/login_title"

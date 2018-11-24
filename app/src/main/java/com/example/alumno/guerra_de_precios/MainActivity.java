@@ -31,66 +31,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fabPrincipal = (FloatingActionButton) findViewById(R.id.fab_filter);
-
-        fabPrincipal.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-
-                //animacion del fab que despliega
-                Animation animRotate = android.view.animation.AnimationUtils.loadAnimation(view.getContext(),  R.anim.rotate_clockwise);
-                animRotate.setDuration(100L);
-                view.startAnimation(animRotate);
-
-                //obtengo los botones
-                final FloatingActionButton fab1 = (FloatingActionButton) findViewById(R.id.fab_worse);
-                final FloatingActionButton fab2 = (FloatingActionButton) findViewById(R.id.fab_best);
-
-                //muestro los botones
-                if (fab1.getVisibility() == View.VISIBLE){
-
-                    //animacion de cierre
-                    Animation animClose = android.view.animation.AnimationUtils.loadAnimation(fab1.getContext(),  R.anim.fab_close);
-                    animClose.setDuration(250L);
-                    fab1.startAnimation(animClose);
-                    fab2.startAnimation(animClose);
-
-                    fab1.setVisibility(View.INVISIBLE);
-                    fab2.setVisibility(View.INVISIBLE);
-                }else{
-
-                    //animacion de apertura
-                    Animation animOpen = android.view.animation.AnimationUtils.loadAnimation(fab1.getContext(),  R.anim.fab_open);
-                    animOpen.setDuration(300L);
-                    fab1.startAnimation(animOpen);
-                    fab2.startAnimation(animOpen);
-
-                    fab1.setVisibility(View.VISIBLE);
-                    fab2.setVisibility(View.VISIBLE);
-                }
-
-                //onlick para que se oculten los botones
-                View noButtonZone = findViewById(R.id.no_button_zone);
-                noButtonZone.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        Animation animClose = android.view.animation.AnimationUtils.loadAnimation(fab1.getContext(),  R.anim.fab_close);
-                        animClose.setDuration(250L);
-                        fab1.startAnimation(animClose);
-                        fab2.startAnimation(animClose);
-
-                        fab1.setVisibility(View.INVISIBLE);
-                        fab2.setVisibility(View.INVISIBLE);
-                    }
-                });
-
-            }
-        });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
