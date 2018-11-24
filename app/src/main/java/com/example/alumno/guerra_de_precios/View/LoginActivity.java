@@ -1,4 +1,4 @@
-package com.example.alumno.guerra_de_precios;
+package com.example.alumno.guerra_de_precios.View;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.alumno.guerra_de_precios.R;
 
 public class LoginActivity extends AppCompatActivity {
 

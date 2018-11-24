@@ -1,4 +1,4 @@
-package com.example.alumno.guerra_de_precios;
+package com.example.alumno.guerra_de_precios.View;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

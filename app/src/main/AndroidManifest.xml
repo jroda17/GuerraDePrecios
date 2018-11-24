@@ -9,15 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
+        <activity android:name=".View.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".ListActivity"/>
-        <activity android:name=".PlaceActivity"/>
+        <activity android:name=".View.MainActivity"/>
+        <activity android:name=".View.ListActivity"/>
+        <activity android:name=".View.PlaceActivity"/>
+        <activity android:name=".View.AddPlaceActivity"/>
+        <activity android:name=".View.HelpActivity"/>
+        <activity android:name=".View.MapActivity"/>
+        <activity android:name=".View.MyPlacesActivity"/>
     </application>
 
 </manifest>

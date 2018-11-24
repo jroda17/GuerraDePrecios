@@ -1,10 +1,9 @@
-package com.example.alumno.guerra_de_precios;
+package com.example.alumno.guerra_de_precios.View;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -13,8 +12,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.animation.Animation;
+
+import com.example.alumno.guerra_de_precios.R;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -87,12 +86,24 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_places) {
-            // Handle the camera action
+
+            Intent intent = new Intent(MainActivity.this, MyPlacesActivity.class);
+            MainActivity.this.startActivity(intent);
+
         } else if (id == R.id.nav_new_place) {
+
+            Intent intent = new Intent(MainActivity.this, AddPlaceActivity.class);
+            MainActivity.this.startActivity(intent);
 
         } else if (id == R.id.nav_map) {
 
+            Intent intent = new Intent(MainActivity.this, MapActivity.class);
+            MainActivity.this.startActivity(intent);
+
         } else if (id == R.id.nav_help) {
+
+            Intent intent = new Intent(MainActivity.this, HelpActivity.class);
+            MainActivity.this.startActivity(intent);
 
         }
 

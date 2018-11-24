@@ -10,4 +10,8 @@
     <string name="navigation_drawer_close">Cerrar Menu de Navegacion</string>
     <string name="navigation_drawer_open">Abrir Menu de Navegacion</string>
     <string name="saveCredentials">Recordarme?</string>
+    <string name="my_places">Mis Lugares</string>
+    <string name="add_place">Agregar Lugar</string>
+    <string name="map">Mapa</string>
+    <string name="help">Ayuda</string>
 </resources>
